@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setText(pointList.size());
 
+        x = 5;
+
     }
 
     public ApplicationDatabase getDatabase(){
