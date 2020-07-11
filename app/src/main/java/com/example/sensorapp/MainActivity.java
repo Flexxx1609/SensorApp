@@ -27,9 +27,9 @@ import com.github.mikephil.charting.data.LineDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-// 1 Sensordatenauslesung Stephan
-// 2 Live-Monitoring Clemens
-// 3 Datenbank
+// 1 Sensordatenauslesung Stephan Jarisch st19m006
+// 2 Live-Monitoring Clemens Buchegger st19m019
+// 3 Datenbank Felix Edel st19m023
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
