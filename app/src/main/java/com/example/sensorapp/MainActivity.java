@@ -29,7 +29,7 @@ import java.util.List;
 
 // 1 Sensordatenauslesung Stephan Jarisch st19m006
 // 2 Live-Monitoring Clemens Buchegger st19m019
-// 3 Datenbank Felix Edel st19m023
+// 3 Datenbank/Layout Felix Edel st19m023
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         // 2. Erstellung des Diagramms
         mChart = (LineChart) findViewById(R.id.chart1);
         mChart.setVisibleXRangeMaximum(1000);
