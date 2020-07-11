@@ -1,5 +1,6 @@
 package com.example.sensorapp.database.repositoy;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -11,6 +12,9 @@ import com.example.sensorapp.database.dao.Datapoint;
 import java.util.List;
 
 @Dao
+
+// Datenbankzugriff - Android Room
+
 public interface IDatapointRepository {
 
     @Insert
@@ -26,7 +30,11 @@ public interface IDatapointRepository {
     public Datapoint findById(String datapoint_id);
 
     @Query("SELECT * FROM datapoint")
-    public List<Datapoint> getItems();
+    public LiveData<List<Datapoint>> getItems();
+
+    // 3. Beschränkung der eingelesenen Daten auf 1000 Stück mit dem aktuellsten Punkt als letztes ("aktuell")
+    @Query("SELECT * FROM datapoint order by timestamp desc LIMIT 0, 1000")
+    public LiveData<List<Datapoint>> getLastItems();
 
     @Query("SELECT * FROM datapoint WHERE origin = :origin")
     public List<Datapoint> findByOrigin(String origin);
@@ -35,6 +43,6 @@ public interface IDatapointRepository {
     public Datapoint findByTimestamp(long timestamp);
 
     @Query("SELECT * FROM datapoint WHERE timestamp >= :start AND timestamp <= :stop")
-    public List<Datapoint> findByTimerange(long start, long stop);
+    public LiveData<List<Datapoint>> findByTimerange(long start, long stop);
 
 }

@@ -15,17 +15,17 @@ public class Datapoint {
     @NonNull
     private String datapoint_id;
 
-    private double x_val;
+    private float x_val;
 
-    private double y_val;
+    private float y_val;
 
-    private double z_val;
+    private float z_val;
 
     private long timestamp;
 
     private String origin;
 
-    public Datapoint(@NonNull String datapoint_id, double x_val, double y_val, double z_val, String origin, long timestamp) {
+    public Datapoint(@NonNull String datapoint_id, float x_val, float y_val, float z_val, String origin, long timestamp) {
         this.datapoint_id = datapoint_id;
         this.x_val = x_val;
         this.y_val = y_val;
@@ -35,7 +35,7 @@ public class Datapoint {
     }
 
     @Ignore
-    public Datapoint(double x_val, double y_val, double z_val, String origin, long timestamp){
+    public Datapoint(float x_val, float y_val, float z_val, String origin, long timestamp){
         this.datapoint_id = UUID.randomUUID().toString();
         this.x_val = x_val;
         this.y_val = y_val;
@@ -45,7 +45,7 @@ public class Datapoint {
     }
 
     @Ignore
-    public Datapoint(double x_val, double y_val, double z_val, String origin){
+    public Datapoint(float x_val, float y_val, float z_val, String origin){
         this.datapoint_id = UUID.randomUUID().toString();
         this.x_val = x_val;
         this.y_val = y_val;
@@ -63,27 +63,27 @@ public class Datapoint {
         this.datapoint_id = datapoint_id;
     }
 
-    public double getX_val() {
+    public float getX_val() {
         return x_val;
     }
 
-    public void setX_val(double x_val) {
+    public void setX_val(float x_val) {
         this.x_val = x_val;
     }
 
-    public double getY_val() {
+    public float getY_val() {
         return y_val;
     }
 
-    public void setY_val(double y_val) {
+    public void setY_val(float y_val) {
         this.y_val = y_val;
     }
 
-    public double getZ_val() {
+    public float getZ_val() {
         return z_val;
     }
 
-    public void setZ_val(double z_val) {
+    public void setZ_val(float z_val) {
         this.z_val = z_val;
     }
 
