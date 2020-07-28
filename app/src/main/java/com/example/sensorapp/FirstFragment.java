@@ -10,7 +10,7 @@ import com.google.android.material.navigation.NavigationView;
 
 
 public class FirstFragment extends AppCompatActivity {
-    
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
